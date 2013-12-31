@@ -18,13 +18,17 @@
 <hr>
 
 <% if user_signed_in? %>
+
 <p>Logged in as <strong><%= current_user.email %></strong>!</p>
-<a href="<%= destroy_user_session_path %>">Logout</a>
+<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+
 <% else %>
+
 <nav>
 	<a href="<%= new_user_session_path %>">Login</a>
 	<a href="<%= new_user_registration_path %>">Register</a>
 </nav>
+
 <% end %>
 
 <hr>
