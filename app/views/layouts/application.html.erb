@@ -8,12 +8,25 @@
 </head>
 <body>
 
+<h1>Remember-App</h1>
+
 <nav>
 	<a href="<%= root_path %>">Home</a>
-	<a href="<%= %>">Contact</a>
+	<a href="<%= contact_path %>">Contact</a>
+</nav>
+
+<hr>
+
+<nav>
+	<a href="#">Login</a>
+	<a href="#">Register</a>
 </nav>
 
 <%= yield %>
+
+<hr>
+
+<small>Copyright <%= Time.now.year %> <a href="http://twitter.com/luizhrqas" target="_blank">@luizhrqas</a> - <a href="https://github.com/luizhrqas/remember-app" target="_blank">Github</a>.</small>
 
 </body>
 </html>
