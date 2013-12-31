@@ -17,10 +17,20 @@
 
 <hr>
 
+<% if user_signed_in? %>
+<p>Logged in as <strong><%= current_user.email %></strong>!</p>
+<a href="<%= destroy_user_session_path %>">Logout</a>
+<% else %>
 <nav>
-	<a href="#">Login</a>
-	<a href="#">Register</a>
+	<a href="<%= new_user_session_path %>">Login</a>
+	<a href="<%= new_user_registration_path %>">Register</a>
 </nav>
+<% end %>
+
+<hr>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
 <%= yield %>
 
