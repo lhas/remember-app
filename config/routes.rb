@@ -1,6 +1,9 @@
 RememberApp::Application.routes.draw do
-  devise_for :users
   root 'welcome#index'
-
+  
+  devise_for :users
+  
   get 'contact', to: 'welcome#contact', as: 'contact'
+
+  resources 'insights'
 end

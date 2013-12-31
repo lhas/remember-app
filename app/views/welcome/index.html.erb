@@ -1,19 +1,30 @@
+<% if user_signed_in? %>
 
-<h2>Create new Insight</h2>
+  <h2>Create new Insight</h2>
 
-<h2>Latest Insights</h2>
+  <%= simple_form_for @insight do |f| %>
 
-<% unless @user_insights %>
-  <p>You don't have any insights. Lets smoke some weed, listen some music and start?</p>
-<% else %>
+    <%= f.input :content %>
 
-  <ul>
+    <%= f.button :submit %>
 
-    <% @user_insights.each do |insight| %>
-      <li><%= insight.content %> at <%= insight.created_at %></li>
-    <% end %>
+  <% end %>
 
-  </ul>
+  <h2>Latest Insights</h2>
+
+  <% unless @user_insights %>
+    <p>You don't have any insights. Lets smoke some weed, listen some music and start?</p>
+  <% else %>
+
+    <ul>
+
+      <% @user_insights.each do |insight| %>
+        <li><%= insight.content %> at <%= insight.created_at %></li>
+      <% end %>
+
+    </ul>
+
+  <% end %>
 
 <% end %>
 
