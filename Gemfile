@@ -37,3 +37,5 @@ gem 'thin'
 gem 'devise'
 
 gem 'simple_form'
+
+gem "recaptcha", require: "recaptcha/rails"

@@ -5,8 +5,9 @@ RememberApp::Application.routes.draw do
   # Devise
   devise_for :users
   
-  # Contact Page
-  get 'contact', to: 'pages#contact', as: 'contact'
+  # Contacts
+  get 'contact', to: 'contact#new', as: 'contact'
+  post 'contact/create', to: 'contact#create', as: 'create_contact'
 
   # Insights
   post 'insights/create', to: 'insights#create', as: 'create_insight'

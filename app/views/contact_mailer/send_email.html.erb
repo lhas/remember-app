@@ -1,0 +1,7 @@
+<strong>Name:</strong> <%= @record.name %>
+<br>
+<strong>E-mail:</strong> <%= @record.email %>
+<br>
+<strong>Date:</strong> <%= I18n.localize(@record.created_at, format: '%d/%m/%Y %H:%M:%S') %>
+<br>
+<strong>Message:</strong> <%= @record.message %>
