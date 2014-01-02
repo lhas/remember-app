@@ -37,4 +37,7 @@ RememberApp::Application.configure do
     :user_name => "luizhrqas@gmail.com",
     :password => "cwAYZO_OtERKSvA1oAa5kg"
   }
+
+  config.reload_classes_only_on_change = false
+
 end

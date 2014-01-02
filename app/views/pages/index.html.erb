@@ -19,16 +19,17 @@
     <ul>
 
       <% @user_insights.each do |insight| %>
-        <li><%= insight.content %> at <%= insight.created_at %></li>
+        <li><%= insight.content %> at <%= timeago(insight.created_at) %></li>
       <% end %>
 
     </ul>
 
   <% end %>
+  
+  <hr>
 
 <% end %>
 
-<hr>
 
 <h2>Tutorial</h2>
 
