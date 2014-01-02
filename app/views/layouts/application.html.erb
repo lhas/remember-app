@@ -8,40 +8,45 @@
 </head>
 <body>
 
-<h1>Remember-App</h1>
+  <div class="container">
 
-<nav>
-	<a href="<%= root_path %>">Home</a>
-	<a href="<%= contact_path %>" data-no-turbolink="true">Contact</a>
-</nav>
+    <header>
 
-<hr>
+      <div class="row">
 
-<% if user_signed_in? %>
+        <h1 id="logo" class="col-xs-5">
+          <a href="<%= root_path %>">
+            Remember App
+          </a>
+        </h1> <!-- #logo -->
+      
+        <nav id="main-nav" class="col-xs-7 navbar navbar-default">
+          <a href="<%= root_path %>">Home</a>
+          <a href="<%= contact_path %>" data-no-turbolink="true">Contact</a>
 
-<p>
-  Logged in as <strong><%= current_user.email %></strong>! <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-</p>
+          <% if user_signed_in? %>
+                <span class="label label-default pull-left">Logged in as <strong><%= current_user.email %></strong></span>
+                <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn-logout" %>
+          <% else %>
+            <a href="<%= new_user_session_path %>">Login</a>
+            <a href="<%= new_user_registration_path %>">Register</a>
+          <% end %>
+        </nav> <!-- #main-nav -->
 
-<% else %>
+      </div> <!-- .row -->
 
-<nav>
-	<a href="<%= new_user_session_path %>">Login</a>
-	<a href="<%= new_user_registration_path %>">Register</a>
-</nav>
+    </header>
 
-<% end %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 
-<hr>
+    <%= yield %>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+    <hr>
 
-<%= yield %>
+    <small>Copyright <%= Time.now.year %> <a href="http://twitter.com/luizhrqas" target="_blank">@luizhrqas</a> - <a href="https://github.com/luizhrqas/remember-app" target="_blank">Github</a>.</small>
 
-<hr>
-
-<small>Copyright <%= Time.now.year %> <a href="http://twitter.com/luizhrqas" target="_blank">@luizhrqas</a> - <a href="https://github.com/luizhrqas/remember-app" target="_blank">Github</a>.</small>
+  </div> <!-- .container -->
 
 </body>
 </html>
