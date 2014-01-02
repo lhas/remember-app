@@ -28,8 +28,8 @@
                 <span class="label label-default pull-left">Logged in as <strong><%= current_user.email %></strong></span>
                 <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn-logout" %>
           <% else %>
-            <a href="<%= new_user_session_path %>">Login</a>
-            <a href="<%= new_user_registration_path %>">Register</a>
+            <a href="<%= new_user_registration_path %>" class="pull-right">Register</a>
+            <a href="<%= new_user_session_path %>" class="pull-right">Login</a>
           <% end %>
         </nav> <!-- #main-nav -->
 
