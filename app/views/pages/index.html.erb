@@ -2,7 +2,7 @@
 
   <h2>Create new Insight</h2>
 
-  <%= simple_form_for @insight do |f| %>
+  <%= simple_form_for @insight, url: create_insight_path do |f| %>
 
     <%= f.input :content %>
 
@@ -19,7 +19,7 @@
     <ul>
 
       <% @user_insights.each do |insight| %>
-        <li><%= insight.content %> at <%= timeago(insight.created_at) %></li>
+        <li>"<%= insight.content %>" <small><%= timeago(insight.created_at) %></small></li>
       <% end %>
 
     </ul>

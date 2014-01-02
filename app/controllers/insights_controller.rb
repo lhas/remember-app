@@ -1,14 +1,14 @@
 class InsightsController < ApplicationController
 
   def create
-    @insight = Insight.new(insight_params)
+    insight = Insight.new(insight_params)
 
     if user_signed_in?
-      @insight.user_id = current_user.id
+      insight.user_id = current_user.id
     end
 
     respond_to do |format|
-      if @insight.save
+      if insight.save
         format.html { redirect_to root_path, notice: 'Your insight was successfully created.' }
       end
     end

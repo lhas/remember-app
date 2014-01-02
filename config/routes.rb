@@ -5,5 +5,5 @@ RememberApp::Application.routes.draw do
   
   get 'contact', to: 'pages#contact', as: 'contact'
 
-  resources 'insights'
+  post 'insights/create', to: 'insights#create', as: 'create_insight'
 end
